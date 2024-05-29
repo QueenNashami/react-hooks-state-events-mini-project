@@ -1,13 +1,22 @@
 import React from "react";
 
-function Task() {
+// Task component to render a single task item
+export default function Task({text, task, category, click}) {
   return (
     <div className="task">
-      <div className="label">CATEGORY HERE</div>
-      <div className="text">TEXT HERE</div>
-      <button className="delete">X</button>
+      {/* Display the category of the task */}
+      <div className="label">{category}</div>
+      
+      {/* Display the text of the task */}
+      <div className="text">{text}</div>
+      
+      {/* Delete button with an onClick handler to trigger the click function passed as prop */}
+      <button
+        className="delete"
+        onClick={() => click(task)}
+      >
+        X
+      </button>
     </div>
   );
 }
-
-export default Task;
